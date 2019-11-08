@@ -10,7 +10,7 @@
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 |id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -24,15 +24,15 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|image|text|null: false|
+|text|text||
+|image|text||
 |id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :users
-- has_many :groups
+- belongs_to :user
+- belongs_to :group
 
 
 
@@ -41,10 +41,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
-|groupname|string|null: false|
+|name|string|null: false|
 
 ### Association
-- belongs_to :posts
+- has_many :posts
 - has_many :users, through: :groups_users
 - has_many :group_users
 
@@ -58,6 +58,5 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :posts
-- belongs_to :groups
-
+- belongs_to :user
+- belongs_to :group
