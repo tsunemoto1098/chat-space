@@ -14,7 +14,6 @@
 
 ### Association
 - has_many :post
-- has_many :
 - has_many :groups, through: :posts
 
 
@@ -33,7 +32,7 @@
 
 
 
-##　groupsテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
