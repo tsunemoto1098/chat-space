@@ -1,33 +1,39 @@
-## groups_usersテーブル
+# README
+
+# chat-space DB設計
+
+
+
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|email|string|null: false|
+|password|string|null: false|
+|username|string|null: false|
 
 ### Association
-- belongs_to :group
-- belongs_to :user## groups_usersテーブル
+- has_many :post
+- has_many :
+- has_many :groups, through: :posts
+
+
+
+## postsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|text|text|null: false|
+|image|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :user## groups_usersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
 - belongs_to :user
+- belongs_to :groups_tags
 
-## groups_usersテーブル
+
+
+##　groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -36,4 +42,19 @@
 
 ### Association
 - belongs_to :group
-- belongs_to :user
+- belongs_to :groups_tags
+- has_many :users, through: :posts
+
+
+
+## groups_tagsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- has_many :posts
+- has_many :groups
+
