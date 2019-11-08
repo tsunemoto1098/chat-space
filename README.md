@@ -37,6 +37,8 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+|groupname|string|null: false|
+|member|string|null: false|
 
 ### Association
 - belongs_to :posts
