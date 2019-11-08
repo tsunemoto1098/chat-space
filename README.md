@@ -13,8 +13,8 @@
 |username|string|null: false|
 
 ### Association
-- has_many :post
-- has_many :groups, through: :posts
+- has_many :posts
+- has_many :groups, through: :groups_tags
 
 
 
@@ -24,11 +24,10 @@
 |------|----|-------|
 |text|text|null: false|
 |image|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
-- belongs_to :groups_tags
+- belongs_to :users
+- has_many :groups
 
 
 
@@ -40,9 +39,8 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :groups_tags
-- has_many :users, through: :posts
+- belongs_to :posts
+- has_many :users, through: :groups_tags
 
 
 
@@ -54,6 +52,6 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :posts
-- has_many :groups
+- belongs_to :posts
+- belongs_to :groups
 
