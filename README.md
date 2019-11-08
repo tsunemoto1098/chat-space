@@ -11,10 +11,12 @@
 |email|string|null: false|
 |password|string|null: false|
 |username|string|null: false|
+|id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :posts
-- has_many :groups, through: :groups_tags
+- has_many :groups, through: :groups_users
+- has_many :groups
 
 
 
@@ -24,6 +26,9 @@
 |------|----|-------|
 |text|text|null: false|
 |image|text|null: false|
+|id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :users
@@ -35,18 +40,17 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|id|integer|null: false, foreign_key: true|
 |groupname|string|null: false|
-|member|string|null: false|
 
 ### Association
 - belongs_to :posts
-- has_many :users, through: :groups_tags
+- has_many :users, through: :groups_users
+- has_many :group_users
 
 
 
-## groups_tagsテーブル
+## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
