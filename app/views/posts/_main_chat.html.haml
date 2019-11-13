@@ -1,31 +1,31 @@
 .main
   .main-header
     .main-header__left-box
-      %h2.main-header__left-box__current-group{"data-group_id" => "5031"}
+      %h2.main-header__left-box__current-group{"data-group_id": "5031"}
         つねもとグループ
       %ul.main-header__left-box__member-list
         Member：
         %li.main-header__left-box__member-list__member つねもと
-    %a{:href => "/groups/5031/edit"}
+    =link_to "/groups/5031/edit" do
       .main-header__edit-btn Edit
   .messages
-    .message{"data-message_id" => "12085"}
+    .message{"data-message_id": "12085"}
       .message__upper-info
         %p.message__upper-info__talker つねもと
         %p.message__upper-info__date 2019/11/12(Tue) 13:28:48
       %p.message__text あああああ
-    .message{"data-message_id" => "12109"}
+    .message{"data-message_id": "12109"}
       .message__upper-info
         %p.message__upper-info__talker つねもと
         %p.message__upper-info__date 2019/11/12(Tue) 15:12:15
       %p.message__text いいいいい
   .form
-    %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/5031/messages", :enctype => "multipart/form-data", :method => "post"}
-      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-      %input{:name => "authenticity_token", :type => "hidden", :value => "Szme+bubBenkFSWr2NnJwBj9ty8dXxoOxdofUo7jgMX+O0hpaTDRkjo3Wd+XxfQfr1re0VmyEWoNATU22eJW6g=="}/
+    %form#new_message.new_message{"accept-charset": "UTF-8", action: "/groups/5031/messages", enctype: "multipart/form-data", method: "post"}
+      %input{name: "utf8", type: "hidden", value: "✓"}/
+      %input{name: "authenticity_token", type: "hidden", value: "Szme+bubBenkFSWr2NnJwBj9ty8dXxoOxdofUo7jgMX+O0hpaTDRkjo3Wd+XxfQfr1re0VmyEWoNATU22eJW6g=="}/
       .input-box
-        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-        %label.input-box__image{:for => "message_image"}
+        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+        %label.input-box__image{for: "message_image"}
           %i.fa.fa-image
-          %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
-      %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+          %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
+      %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
