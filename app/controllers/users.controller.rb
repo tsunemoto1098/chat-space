@@ -1,9 +1,9 @@
-class PostsController < ApplicationController
- 
+class UsersController < ApplicationController
+
   def index
   end
-
-  def edit 
+  
+  def edit
   end
 
   def update
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-
+  
   private
 
   def user_params
