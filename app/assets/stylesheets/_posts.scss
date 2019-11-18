@@ -1,4 +1,4 @@
-.wrapper
+.wrapper{
 
   .side{
     width: 300px;
@@ -109,17 +109,16 @@
 
 
 
-  .posts {
+  .post {
     height: calc(100vh - 263px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
-    .post{
+    .upper-post{
       padding-bottom: 40px;
-      &__upper-info{
       display: flex;
       margin-bottom: 10px;
-      &__talker{
+      &__user-name{
       color: #434a54;
       font-size: 16px;
       font-weight: bold;
@@ -129,59 +128,49 @@
       font-size: 12px;
       margin-left: 10px;
       }
-      }
-  }
-      .post__text{
-      color: #434a54;
-      font-size: 14px;
-      margin-bottom: 10px;
-      }
+    }
+    .lower-post{
+    color: #434a54;
+    font-size: 14px;
+    margin-bottom: 10px;
+    }
   }
 
 
 
   .form {
-    height: 50px;
-    padding: 20px 40px;
-    background-color: #ddd;
-    .new_post{
-    display: flex;
-    }
-    .input-box{
-      position: relative;
-      width: 100%;
-      &__text{
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    &__post {
+      border: none;
+      float: left;
       height: 50px;
-      width: 95%;
-      padding: 0 40px 0 10px;
-      color: #434a54;
-      border-style: none;
+      width: calc(100% - 150px);
+    }
+    &__mask {
+      background-color: white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
       }
-      &__image{
-      font-size: 1.3rem;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
+      .hidden {
+        display: none;
       }
-  .fa.fa-image {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+    }
+    &__submit {
+      background-color:blue;
+      border: none;
+      color: white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+    }
   }
-  .input-box__image__file {
-    display: none;
-  }
-  }
-  .submit-btn{
-    width: 100px;
-    height: 50px;
-    padding: 0 30px;
-    margin-left: 15px;
-    background-color: #38aef0;
-    color: white;
-    cursor: pointer;
-  }
-  }
+}
