@@ -1,6 +1,6 @@
 $(function(){ 
   function buildHTML(post){
-   if ( post.image ) {
+   var img = post.image ? `<img src=${post.image} >` : ""
      var html =
       `<div class="post" data-post-id=${post.id}>
          <div class="upper-post">
@@ -16,28 +16,9 @@ $(function(){
              ${post.content}
            </p>
          </div>
-         <img src=${post.image} >
+          ${img}
        </div>`
      return html;
-   } else {
-     var html =
-      `<div class="post" data-post-id=${post.id}>
-         <div class="upper-post">
-           <div class="upper-post__user-name">
-             ${post.user_name}
-           </div>
-           <div class="upper-post__date">
-             ${post.date}
-           </div>
-         </div>
-         <div class="lower-post">
-           <p class="lower-post__content">
-             ${post.content}
-           </p>
-         </div>
-       </div>`
-     return html;
-   };
  }
 $('form').on('submit', function(e){
  e.preventDefault();
