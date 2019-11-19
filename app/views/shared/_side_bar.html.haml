@@ -1,14 +1,16 @@
 .side
   .header
-    %h3.header__name
-      = current_user.name
-    %ul.header__lists
-      %li.list
-        = link_to new_group_path do
-          %i.fa.fa-edit
-      %li.list
-        = link_to edit_user_path(current_user) do
-          %i.fa.fa-cog
+    .header__box
+      %p.header__box__user-name
+        = current_user.name
+      %ul.header__box__menu
+        %li.header__box__menu__new-group
+          = link_to new_group_path do
+            %i.fa.fa-edit
+        %li.header__box__menu__edit-user
+          =link_to edit_user_path(current_user) do
+            %i.fa.fa-cog
+
   .groups
     - current_user.groups.each do |group|
       .group
