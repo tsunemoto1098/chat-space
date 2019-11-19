@@ -4,14 +4,13 @@
     width: 300px;
     color: white;
     float: left;
-
+    box-sizing: border-box;
     .header{
     background-color: #253141;
     height: 100px;
     display: flex;
     align-items: center;
     padding: 0 20px;
-
       &__box{
       display: flex;
       justify-content: space-between;
@@ -21,7 +20,7 @@
         margin: 0;
         padding: 0;}
         &__menu{
-          display: flex;
+        display: flex;
           &__new-group{
             margin-left: 0.3rem;
             .fa.fa-edit{
@@ -50,6 +49,7 @@
       background-color: #2f3e51;
       padding: 20px 20px 0;
       overflow: scroll;
+      box-sizing: border-box;
       .group{
         margin-bottom: 40px;
         &__name{
@@ -109,30 +109,32 @@
 
 
 
-  .post {
-    height: calc(100vh - 263px);
+  .posts {
+    height: calc(100vh - 283px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
-    .upper-post{
+    .post{
       padding-bottom: 40px;
-      display: flex;
-      margin-bottom: 10px;
-      &__user-name{
+      .upper-post{
+        display: flex;
+        margin-bottom: 10px;
+        &__user-name{
+        color: #434a54;
+        font-size: 16px;
+        font-weight: bold;
+        }
+        &__date{
+        color: #999999;
+        font-size: 12px;
+        margin-left: 10px;
+        }
+      }
+      .lower-post{
       color: #434a54;
-      font-size: 16px;
-      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 10px;
       }
-      &__date{
-      color: #999999;
-      font-size: 12px;
-      margin-left: 10px;
-      }
-    }
-    .lower-post{
-    color: #434a54;
-    font-size: 14px;
-    margin-bottom: 10px;
     }
   }
 
