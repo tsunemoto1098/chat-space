@@ -1,6 +1,5 @@
 $(function(){ 
   function buildHTML(post){
-    console.log(post)
    var img = post.image.url ? `<img src=${post.image.url} >` : "";
      var html =
       `<div class="post" data-post-id=${post.id}>
