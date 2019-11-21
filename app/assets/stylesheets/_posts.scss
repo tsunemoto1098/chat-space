@@ -1,10 +1,10 @@
 .wrapper{
 
   .side{
-    width: 300px;
-    color: white;
-    float: left;
-    box-sizing: border-box;
+  width: 300px;
+  color: white;
+  float: left;
+  box-sizing: border-box;
     .header{
     background-color: #253141;
     height: 100px;
@@ -19,7 +19,7 @@
         &__user-name{
         margin: 0;
         padding: 0;}
-        &__menu{
+        .header__box__menu{
         display: flex;
           &__new-group{
             margin-left: 0.3rem;

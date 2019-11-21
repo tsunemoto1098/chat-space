@@ -1,6 +1,6 @@
 $(function(){ 
   function buildHTML(post){
-   var img = post.image ? `<img src=${post.image} >` : ""
+   var img = post.image.url ? `<img src=${post.image.url} >` : "";
      var html =
       `<div class="post" data-post-id=${post.id}>
          <div class="upper-post">
@@ -44,3 +44,28 @@ $('form').on('submit', function(e){
    return false;
  });
 });
+
+var reloadposts = function () {
+  if (window.location.href.match(/\/groups\/\d+\/posts/)){
+    var last_post_id = $('.post:last').data("post-id");
+
+    $.ajax({
+      url: "api/posts",
+      type: 'get',
+      dataType: 'json',
+      data: {last_id: last_post_id}
+    })
+    .done(function (posts) {
+      var insertHTML = '';
+      posts.forEach(function (post) {
+        insertHTML = buildHTML(post);
+        $('.posts').append(insertHTML);
+      })
+      $('.posts').animate({scrollTop: $('.posts')[0].scrollHeight}, 'fast');
+    })
+    .fail(function () {
+      alert('自動更新に失敗しました');
+    });
+  }
+};
+setInterval(reloadposts, 5000);

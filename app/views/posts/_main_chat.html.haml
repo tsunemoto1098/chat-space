@@ -1,14 +1,14 @@
 .main
   .main-header
     .main-header__left-box
-      %h2.main-header__left-box__current-group{"data-group_id": "5031"}
+      %h2.main-header__left-box__current-group
         （グループ名変更必要）
       %ul.main-header__left-box__member-list
         Member：
-        %li.main-header__left-box__member-list__member （変更必要）
+        %li.main-header__left-box__member-list__member
+        （変更必要）
     =link_to [@group, @post] do
       .main-header__edit-btn Edit（リンク設定）
-  
   .posts
     = render @posts
 
