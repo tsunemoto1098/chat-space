@@ -8,7 +8,7 @@ $(function(){
              ${post.user_name}
            </div>
            <div class="upper-post__date">
-             ${post.date}
+             ${post.created_at}
            </div>
          </div>
          <div class="lower-post">
@@ -20,7 +20,7 @@ $(function(){
        </div>`
      return html;
  }
-$('form').on('submit', function(e){
+$('#new_post').on('submit', function(e){
  e.preventDefault();
  var formData = new FormData(this);
  var url = $(this).attr('action')
