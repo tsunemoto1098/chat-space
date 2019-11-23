@@ -61,7 +61,6 @@
           font-size: 11px;}
        }
     }
-  
   }
 
 
@@ -93,20 +92,23 @@
       margin: 0;
       padding: 0;
       }
+      .member{
+      padding-right:5px;
+      }
       }
       &__edit-btn{
       height: 40px;
       line-height: 40px;
       padding: 0 20px;
-      margin-top: 30px;
+      margin-top: -70px;
       border: solid 1px #38aef0;
       position: absolute;
       right: 40px;
       color:#38aef0;
+      text-decoration: none;
   }
   }
   }
-
 
 
   .posts {

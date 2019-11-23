@@ -2,20 +2,20 @@
   .main-header
     .main-header__left-box
       %h2.main-header__left-box__current-group
-        （グループ名変更必要）
+        = @group.name
       %ul.main-header__left-box__member-list
         Member：
         %li.main-header__left-box__member-list__member
-        （変更必要）
-      .main-header__edit-btn
-        = link_to edit_group_path(@group.id) do
-          Edit
+        - @group.users.each do |user|
+          .member
+            = user.name
+      = link_to 'Edit', edit_group_path(@group.id), class: "main-header__edit-btn"
   .posts
     = render @posts
 
   .form
     = form_for [@group, @post] do |f|
-      = f.text_field :content, class: 'form__post', placeholder: 'type a post'
+      = f.text_field :content, class: 'form__post', placeholder: 'type a message'
       .form__mask
         = f.label :image, class: 'form__mask__image' do
           %i.fa.fa-image
