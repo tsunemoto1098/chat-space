@@ -15,15 +15,17 @@ $(function(){
            <p class="lower-post__content">
              ${post.content}
            </p>
+           ${img}
          </div>
-          ${img}
        </div>`
      return html;
  }
+
 $('#new_post').on('submit', function(e){
  e.preventDefault();
  var formData = new FormData(this);
  var url = $(this).attr('action')
+ 
  $.ajax({
    url: url,
    type: "POST",
@@ -43,10 +45,9 @@ $('#new_post').on('submit', function(e){
    });
    return false;
  });
-});
-
 var reloadposts = function () {
   if (window.location.href.match(/\/groups\/\d+\/posts/)){
+    var href = 'api/posts#index {:format=>"json"}'
     var last_post_id = $('.post:last').data("post-id");
 
     $.ajax({
@@ -69,3 +70,6 @@ var reloadposts = function () {
   }
 };
 setInterval(reloadposts, 5000);
+
+});
+
